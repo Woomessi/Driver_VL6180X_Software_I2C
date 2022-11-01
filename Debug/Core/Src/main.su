@@ -1,0 +1,12 @@
+../Drivers/CMSIS/Include/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+../Drivers/CMSIS/Include/core_cm3.h:1834:26:SysTick_Config	16	static
+../Core/Src/main.c:57:1:__io_putchar	16	static
+../Core/Src/main.c:69:1:__io_getchar	16	static
+../Core/Src/main.c:139:5:VL6180x_I2CWrite	32	static
+../Core/Src/main.c:170:5:VL6180x_I2CRead	40	static
+../Core/Src/main.c:202:5:main	48	static
+../Core/Src/main.c:276:6:Sample_SimpleRanging	96	static
+../Core/Src/main.c:306:6:SystemClock_Config	72	static
+../Core/Src/main.c:345:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:377:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:405:6:Error_Handler	4	static,ignoring_inline_asm
