@@ -4,9 +4,9 @@
 ../Core/Src/main.c:69:1:__io_getchar	16	static
 ../Core/Src/main.c:139:5:VL6180x_I2CWrite	32	static
 ../Core/Src/main.c:170:5:VL6180x_I2CRead	40	static
-../Core/Src/main.c:202:5:main	48	static
-../Core/Src/main.c:276:6:Sample_SimpleRanging	96	static
-../Core/Src/main.c:306:6:SystemClock_Config	72	static
-../Core/Src/main.c:345:13:MX_USART1_UART_Init	8	static
-../Core/Src/main.c:377:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:202:5:main	32	static
+../Core/Src/main.c:268:6:Sample_SimpleRanging	96	static
+../Core/Src/main.c:298:6:SystemClock_Config	72	static
+../Core/Src/main.c:337:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:369:13:MX_GPIO_Init	40	static
 ../Core/Src/main.c:405:6:Error_Handler	4	static,ignoring_inline_asm

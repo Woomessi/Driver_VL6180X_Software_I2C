@@ -225,14 +225,6 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  //初始化使能端口
-  GPIO_InitTypeDef gpioinit;
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  gpioinit.Pin = GPIO_PIN_12 | GPIO_PIN_13;
-  gpioinit.Mode = GPIO_MODE_OUTPUT_PP;
-  gpioinit.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIOB, &gpioinit);
-
 //  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, 1);
 //  uint8_t status;
 //  uint8_t *data = 0x200027d9;//初始化指针，为其分配一个空闲的地址
@@ -384,11 +376,19 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, SCL_Pin | SDA_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, SCL_Pin | SDA_Pin | GPIO_PIN_12 | GPIO_PIN_13, GPIO_PIN_RESET);
+//  HAL_GPIO_WritePin(GPIOB, SCL_Pin | SDA_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : SCL_Pin SDA_Pin */
   GPIO_InitStruct.Pin = SCL_Pin | SDA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*初始化使能端口*/
+  GPIO_InitStruct.Pin = GPIO_PIN_12 | GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
